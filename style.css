@@ -2,8 +2,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-.box-1{
-    background-color: rgb(252, 252, 252);
+
+.box-1 {
+    background-color: rgb(240, 240, 240);
     height: 100vh;
 }
 
@@ -15,9 +16,15 @@ body {
     background-color: #0f8128;
     padding: 10px 20px;
     height: 50px;
-    position: sticky;
+    width: 98%;
+    position: fixed;
     top: 0;
     z-index: 999;
+}
+
+.logo {
+    height: 60px;
+    width: 80px;
 }
 
 .navbar-left .name {
@@ -39,9 +46,9 @@ body {
 }
 /* End Navbar style  */
 
-/* Image style  */
+/* Home page style  */
 
-.profile-container {
+#profile-container {
     display: flex;
     align-items: center;
     padding: 20px;
@@ -49,6 +56,7 @@ body {
 
 .box {
     position: relative;
+    left: 60px;
     width: 350px;
     height: 350px;
     background: #f3f4f6; /* Light grey background */
@@ -107,7 +115,7 @@ body {
 .content img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -117,7 +125,7 @@ body {
 }
 
 .details {
-    margin-left: 350px; 
+    margin-left: 350px;
     margin-top: 100px;
 }
 .name-heading {
@@ -126,7 +134,7 @@ body {
     color: #0ac132;
 }
 
-.dev-detail{
+.dev-detail {
     font-size: 15px;
     font-weight: bold;
     color: #555555;
@@ -145,19 +153,19 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
-  }
-  
-  .contact-button:hover::before {
+}
+
+.contact-button:hover::before {
     transform: scaleX(1);
-  }
-  
-  .button-content {
+}
+
+.button-content {
     position: relative;
     z-index: 1;
     font-size: 15px;
-  }
-  
-  .contact-button::before {
+}
+
+.contact-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -167,17 +175,114 @@ body {
     width: 100%;
     height: inherit;
     border-radius: inherit;
-    background: linear-gradient(
-      82.3deg,
-      rgb(75, 219, 104) 10.8%,
-      rgb(2, 74, 10) 94.3%
-    );
+    background: linear-gradient(82.3deg, rgb(75, 219, 104) 10.8%, rgb(2, 74, 10) 94.3%);
     transition: all 0.475s;
-  }
-  .svg{
+}
+
+.svg {
     height: 40px;
     width: 40px;
     padding: 5px;
-  }
+}
 
-/* End Image style  */
+.scroll {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: relative;
+    top: 100px;
+    left: 70px;
+    animation: down 1.5s infinite;
+    -webkit-animation: down 1.5s infinite;
+    background-color: #92ffaa;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        border-left: 2px solid #333;
+        border-bottom: 2px solid #333;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translateY(15px);
+    }
+    40% {
+        transform: translate(0);
+    }
+}
+
+@-webkit-keyframes down {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translateY(15px);
+    }
+    40% {
+        transform: translate(0);
+    }
+}
+
+/* End Hoame page style  */
+
+/* About us Section  */
+
+#about-us {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 50px;
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: relative;
+    top: 200px;
+}
+
+.node-photo {
+    position: absolute;
+    right: -20%;
+    top: 0;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 300px;
+}
+
+.ex-photo {
+    width: 600px;
+    height: 190px;
+}
+
+.mongodb-photo {
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    width: 600px;
+    height: 350px;
+}
+/* End About us Section   */
+
+/* Projects section */
+
+/* End Projects section */
