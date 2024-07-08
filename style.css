@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "roboto", sens-serif;
 }
 
 .box-1 {
@@ -135,7 +135,7 @@ body {
 }
 
 .dev-detail {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     color: #555555;
     text-decoration: underline;
@@ -304,6 +304,10 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 10px 10px 5px rgb(136, 212, 135);
+}
+
+.projects {
+    padding-bottom: 45px;
 }
 
 .divider {
