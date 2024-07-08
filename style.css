@@ -284,5 +284,102 @@ body {
 /* End About us Section   */
 
 /* Projects section */
+.box-project {
+    background-color: rgb(240, 240, 240);
+    height: 100vh;
+}
+.project-section {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+}
 
+.education,
+.projects {
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgb(136, 212, 135);
+}
+
+.divider {
+    width: 1px;
+    background-color: #ddd;
+    height: auto;
+    margin: 0 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.theta-logo {
+    position: relative;
+    left: 500px;
+    top: -50px;
+    height: 200px;
+    width: 150px;
+    box-shadow: 10px 10px 20px rgb(35, 46, 130);
+}
 /* End Projects section */
+
+/* Contact Section */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 50%;
+    background-color: #2e991e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #48aa4c;
+}
+
+.contact-section {
+    border-radius: 24px;
+    width: 50%;
+    background-color: #efefef;
+    padding: 20px;
+}
+
+/* End Contact Section */
