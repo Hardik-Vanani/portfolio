@@ -1,13 +1,28 @@
+/* Reset and basic styles */
 body {
     margin: 0;
-    font-family: "roboto", sens-serif;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-.box-1 {
-    background-color: rgb(240, 240, 240);
-    height: 100vh;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 /* Navbar style  */
 .navbar {
     display: flex;
@@ -44,7 +59,33 @@ body {
 .navbar-right a:hover {
     text-decoration: underline;
 }
-/* End Navbar style  */
+
+/* Profile secton  */
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+}
+.social-icon {
+    padding: 0 5px;
+    color: #555555;
+    font-size: 35px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.social-icon:hover {
+    color: #0AC132; /* Change to your preferred hover color */
+}
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100vh;
+    background: #f4f4f4;
+    /* text-align: center; */
+    /* padding-top: 0px; */
+}
 
 /* Home page style  */
 
@@ -125,8 +166,10 @@ body {
 }
 
 .details {
-    margin-left: 350px;
-    margin-top: 100px;
+    position: relative;
+    left: 350px;
+    /* margin-left: 350px; */
+    margin-top: 50px;
 }
 .name-heading {
     font-size: 40px;
@@ -179,19 +222,13 @@ body {
     transition: all 0.475s;
 }
 
-.svg {
-    height: 40px;
-    width: 40px;
-    padding: 5px;
-}
-
 .scroll {
     width: 50px;
     height: 50px;
     border: 2px solid #333;
     border-radius: 50%;
     position: relative;
-    top: 100px;
+    top: 50px;
     left: 70px;
     animation: down 1.5s infinite;
     -webkit-animation: down 1.5s infinite;
@@ -235,155 +272,186 @@ body {
 
 /* End Hoame page style  */
 
-/* About us Section  */
-
-#about-us {
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    padding-top: 50px;
+.about-section {
+    padding: 60px 0;
+    background: #fff;
 }
 
-.left-section {
+.about-section .container {
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-section .left {
     flex: 1;
-    padding-right: 20px;
+    margin-right: 20px;
 }
 
-.right-section {
+.about-section .right {
     flex: 1;
-    display: flex;
-    justify-content: right;
-    align-items: right;
-    position: relative;
-    top: 200px;
 }
 
-.node-photo {
-    position: absolute;
-    right: -20%;
-    top: 0;
-    transform: translateY(-50%);
-    width: 500px;
-    height: 300px;
-}
-
-.ex-photo {
-    width: 600px;
-    height: 190px;
-}
-
-.mongodb-photo {
-    position: absolute;
-    top: 120px;
-    left: 80px;
-    width: 600px;
-    height: 350px;
-}
-/* End About us Section   */
-
-/* Projects section */
-.box-project {
-    background-color: rgb(240, 240, 240);
-    height: 100vh;
-}
-.project-section {
-    padding-top: 80px;
+.about-photos {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-photo {
+    width: 200px;
+    height: auto;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+/* Education and Experience Section */
+.education-experience-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.education-experience-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.education-experience-section h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
 }
 
 .education,
-.projects {
-    width: 45%;
+.experience {
+    background: #fff;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 10px 10px 5px rgb(136, 212, 135);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
 }
 
-.projects {
-    padding-bottom: 17px;
-}
-
-.divider {
-    width: 1px;
-    background-color: #ddd;
-    height: auto;
-    margin: 0 10px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+.education h3,
+.experience h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4fd34f;
 }
 
 .theta-logo {
-    position: relative;
-    left: 500px;
-    top: -50px;
-    height: 200px;
+    margin-top: 20px;
     width: 150px;
-    box-shadow: 10px 10px 20px rgb(35, 46, 130);
+    height: auto;
+    border-radius: 5px;
 }
-/* End Projects section */
 
-/* Contact Section */
+.projects-section {
+    padding: 60px 0;
+    background: #f4f4f4;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-icon {
+    font-size: 40px;
+    margin-right: 20px;
+    color: #007bff;
+}
+
+.contact-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.contact-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
 input[type="text"],
 input[type="email"],
-select,
 textarea {
-    width: 80%;
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
 }
 
 input[type="submit"] {
-    width: 50%;
-    background-color: #2e991e;
-    color: white;
+    width: 100%;
     padding: 12px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
     cursor: pointer;
+    font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: #48aa4c;
+    background-color: #0056b3;
 }
 
-.contact-section {
-    border-radius: 24px;
-    width: 50%;
-    background-color: #efefef;
-    padding: 20px;
-}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* End Contact Section */
+    .navbar a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .about-section .container {
+        flex-direction: column;
+    }
+
+    .about-section .left {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .projects-section {
+        padding: 20px;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-icon {
+        margin-bottom: 10px;
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+}
