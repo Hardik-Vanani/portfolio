@@ -6,36 +6,35 @@
         <title>Professional Portfolio</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
     </head>
     <body>
-        <header>
-            <nav class="navbar">
-                <div class="navbar-left">
-                    <img class="logo" src="image/logo.png" alt />
-                </div>
-                <div class="navbar-right">
-                    <a href="#profile-container">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#education-experience">Educational</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
+        <header class="header">
+            <a class="brand" href="#">HARDIK VANANI</a>
+            <button class="toggle-btn">&#9776;</button>
+            <!-- Button for mobile toggle -->
+            <nav class="nav">
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#education">Education</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#contact">Contact</a>
             </nav>
         </header>
 
-        <section id="home" class="home-section">
-            <div id="profile-container">
-                <div class="box">
-                    <div class="content">
-                        <img src="image/hardik.jpg" alt="Profile Image" />
-                    </div>
+        <section class="about" id="about1">
+            <div class="box">
+                <div class="content">
+                    <img src="image/hardik.jpg" alt="Profile Image" />
                 </div>
+            </div>
+            <br />
+            <div class="introduce-text">
+                <h2 class="introduce-title"><strong>Hey, I'm Hardik</strong></h2>
+                <p class="introduce-description"></p>
                 <div class="details">
-                    <div class="name-heading">Hey, I'm Hardik</div>
-                    <br />
                     <div class="dev-detail">Backend Developer</div>
-                    <p>Specializing in Node.js, Express, and MongoDB to deliver high-performance web applications. <br> Building secure, RESTful  APIs and integrating third-party services to enhance application functionality.</p>
-                    <br /> <br>
+                    <p>Specializing in Node.js, Express, and MongoDB to deliver high-performance web applications. Building secure, RESTful APIs and integrating third-party services to enhance application functionality.</p> 
                     <button class="contact-button"><span class="button-content">Contact Me</span></button>
                     <div class="social-icons">
                         <a href="#" class="social-icon">
@@ -57,16 +56,15 @@
                 </div>
             </div>
         </section>
-
         <section id="about" class="about-section">
             <div class="container">
                 <div class="left">
-                    <h2>About Me</h2>
-                    <p>Hello! I'm <b>Hardik</b>, a passionate <b>backend developer</b> with expertise in Node.js, Express, and Mongoose. My journey into backend development began with a curiosity for the inner workings of the web, and over the years, I have honed my skills through various challenging projects.</p>
-                    <p>I specialize in building robust and scalable server-side applications, with a dedication to writing clean, efficient code. I thrive in dynamic environments and enjoy collaborating with cross-functional teams to deliver high-quality products. My expertise includes developing RESTful APIs, efficient data management with MongoDB, and maintaining high standards of code quality and performance. I believe in continuous learning and staying updated with the latest industry trends.</p>
+                    <h1>About My Skills</h1>
+                    <br />
+                    <p>I've specialize in building robust and scalable server-side applications, with a dedication to writing clean, efficient code. I thrive in dynamic environments and enjoy collaborating with cross-functional teams to deliver high-quality products. My expertise includes developing RESTful APIs, efficient data management with MongoDB, and maintaining high standards of code quality and performance. I believe in continuous learning and staying updated with the latest industry trends.</p>
                     <p>
-                        I am always open to discussing new projects or opportunities to be part of innovative visions. Thank you for visiting my portfolio, and
-                        <i>I look forward to connecting with you!</i>
+                        I am always open to discuss new projects or opportunities to be part of innovative visions. <br /><br />Thank you for visiting my portfolio, and
+                        <i>I look forward to connect with you!</i>
                     </p>
                 </div>
                 <div class="right">
@@ -78,28 +76,30 @@
                 </div>
             </div>
         </section>
-
-        <div class="education-experience-section" id="education-experience">
+        <div class="education-experience-section">
             <div class="container">
                 <h2>Education and Experience</h2>
-                <div class="education">
+                <div class="education" id="education">
                     <h3>Education</h3>
                     <p><b>Bachelor of Science in Computer Science (BCA)</b></p>
                     <p>Veer Narmad South Gujarat University, 2024</p>
                 </div>
-                <div class="experience">
+                <div class="experience" id="experience">
                     <h3>Experience</h3>
                     <p><b>Role:</b> Back-End Developer</p>
                     <p><b>Company:</b> Theta Solution</p>
                     <p><b>Duration:</b> 2 Years</p>
-                    <img class="theta-logo" src="image/thetasol.png" alt="Theta Solution" />
+                    <div class="img-container">
+                        <img src="image/thetasol.png" alt="Theta Sol Logo" />
+                    </div>
                 </div>
             </div>
         </div>
-
         <section id="projects" class="projects-section">
             <div class="container">
-                <h2>Projects</h2>
+                <div class="heading">
+                    <h2>Projects</h2>
+                </div>
                 <div class="project">
                     <i class="fas fa-laptop-code project-icon"></i>
                     <div class="project-details">
@@ -138,10 +138,11 @@
                 </div>
             </div>
         </section>
-
         <section id="contact" class="contact-section">
             <div class="container">
-                <h2>Contact Me</h2>
+                <div class="heading">
+                    <h2>Contact Me</h2>
+                </div>
                 <form action="#">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required />
@@ -156,5 +157,25 @@
                 </form>
             </div>
         </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const toggleButton = document.querySelector(".toggle-btn");
+                const navMenu = document.querySelector(".nav");
+                const navLinks = document.querySelectorAll(".nav-link");
+
+                toggleButton.addEventListener("click", function () {
+                    navMenu.classList.toggle("show");
+                    toggleButton.classList.toggle("active");
+                });
+
+                // Close menu when a nav link is clicked
+                navLinks.forEach(function (navLink) {
+                    navLink.addEventListener("click", function () {
+                        navMenu.classList.remove("show");
+                        toggleButton.classList.remove("active");
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

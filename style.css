@@ -17,164 +17,144 @@ h3 {
     margin: 0 0 1rem 0;
     line-height: 1.2;
 }
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-/* Navbar style  */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0f8128;
-    padding: 10px 20px;
-    height: 50px;
-    width: 98%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-}
-
-.logo {
-    height: 60px;
-    width: 80px;
-}
-
-.navbar-left .name {
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-}
-
-.navbar-right a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 18px;
-    font-weight: 550;
-}
-
-.navbar-right a:hover {
-    text-decoration: underline;
-}
-
-/* Profile secton  */
-.social-icons {
-    display: flex;
-    margin-top: 20px;
-}
-.social-icon {
-    padding: 0 5px;
-    color: #555555;
+.heading {
     font-size: 35px;
-    margin-right: 15px;
-    transition: color 0.3s ease;
+    text-align: center;
 }
-.social-icon:hover {
-    color: #0AC132; /* Change to your preferred hover color */
+/* Header Styles */
+.header {
+    background-color: #f7fafc;
+    color: #22543d;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; /* Ensures brand on left and button on right */
+    align-items: center;
 }
 
-.home-section {
+.brand {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.toggle-btn {
+    display: none; /* Hide button by default for desktop */
+    font-size: 1.5rem;
+}
+
+.nav {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.nav-link {
+    color: #22543d;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-btn {
+        display: block; /* Show button for mobile */
+        font-size: 1.5rem;
+        margin-left: auto; /* Push button to the right */
+    }
+
+    .nav {
+        display: none; /* Hide nav for mobile */
+        width: 100%; /* Full width for mobile */
+        margin-top: 0.5rem; /* Adjust spacing */
+    }
+
+    .nav.show {
+        display: flex; /* Show nav when toggled */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        margin: 0.5rem 0; /* Adjust spacing */
+    }
+}
+
+/* About Section Styles */
+.about {
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    height: 100vh;
-    background: #f4f4f4;
-    /* text-align: center; */
-    /* padding-top: 0px; */
-}
-
-/* Home page style  */
-
-#profile-container {
-    display: flex;
     align-items: center;
-    padding: 20px;
+    background-color: #f7fafc;
 }
 
-.box {
-    position: relative;
-    left: 60px;
-    width: 350px;
-    height: 350px;
-    background: #f3f4f6; /* Light grey background */
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.box:before {
-    content: "";
-    position: absolute;
-    inset: -10px 110px;
-    background: linear-gradient(315deg, #30ff5d, #013f1a); /* Green gradient */
-    transition: 0.5s;
-    animation: animate 6s linear infinite;
-}
-
-.box:hover::before {
-    inset: -20px 0px;
-}
-
-@keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
+@media (min-width: 768px) {
+    .about {
+        flex-direction: row;
+        padding: 1.5rem 2rem;
     }
 }
 
-.box::after {
-    content: "";
-    position: absolute;
-    inset: 6px;
-    background: #f3f4f6; /* Light grey background */
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.box:hover .content img {
-    opacity: 2;
-}
-
-.content {
-    position: absolute;
-    inset: 9px;
-    border: 4px solid black;
-    z-index: 3;
-    border-radius: 50%;
+.profile-img {
+    width: 8rem;
+    height: 8rem;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    border-radius: 50%;
+    margin-bottom: 1rem;
 }
 
-.content img {
-    position: absolute;
-    top: 0;
-    left: 0px;
+@media (min-width: 768px) {
+    .profile-img {
+        width: 10rem;
+        height: 10rem;
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.profile-img-content {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
-    pointer-events: none;
-    z-index: 3;
 }
 
-.details {
-    position: relative;
-    left: 350px;
-    /* margin-left: 350px; */
-    margin-top: 50px;
+.introduce-text {
+    max-width: 28rem;
+    text-align: center;
 }
-.name-heading {
-    font-size: 40px;
-    font-weight: bolder;
-    color: #0ac132;
+
+@media (min-width: 768px) {
+    .introduce-text {
+        text-align: left;
+        margin-left: 200px;
+    }
+}
+
+.introduce-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #358d29;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .introduce-title {
+        font-size: 2rem;
+    }
+}
+
+.introduce-description {
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+@media (min-width: 768px) {
+    .introduce-description {
+        font-size: 1rem;
+    }
 }
 
 .dev-detail {
@@ -198,28 +178,8 @@ h3 {
     cursor: pointer;
 }
 
-.contact-button:hover::before {
-    transform: scaleX(1);
-}
-
-.button-content {
-    position: relative;
-    z-index: 1;
-    font-size: 15px;
-}
-
-.contact-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    background: linear-gradient(82.3deg, rgb(75, 219, 104) 10.8%, rgb(2, 74, 10) 94.3%);
-    transition: all 0.475s;
+.contact-button:hover {
+    background-color: #2f8851;
 }
 
 .scroll {
@@ -246,31 +206,11 @@ h3 {
     }
 }
 
-@keyframes down {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translateY(15px);
-    }
-    40% {
-        transform: translate(0);
-    }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-@-webkit-keyframes down {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translateY(15px);
-    }
-    40% {
-        transform: translate(0);
-    }
-}
-
-/* End Hoame page style  */
 
 .about-section {
     padding: 60px 0;
@@ -293,23 +233,39 @@ h3 {
 }
 
 .about-photos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
 }
 
 .about-photo {
-    width: 200px;
+    max-width: 100px;
+    /* Ensure the images are of a reasonable size */
     height: auto;
-    max-height: 100px;
     border-radius: 5px;
+    object-fit: cover;
+    justify-self: center;
+    /* Center the images */
+}
+
+@media (max-width: 768px) {
+    .about-photo {
+        width: calc(50% - 10px);
+        /* Adjust width to fit 2 in a row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-photo {
+        width: 100%;
+        /* Full width for very small screens */
+    }
 }
 
 /* Education and Experience Section */
 .education-experience-section {
     padding: 60px 0;
-    background: #f9f9f9;
+    background: #f7fafc;
 }
 
 .education-experience-section .container {
@@ -343,8 +299,14 @@ h3 {
     color: #4fd34f;
 }
 
-.theta-logo {
-    margin-top: 20px;
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    margin-top: 9px;
     width: 150px;
     height: auto;
     border-radius: 5px;
@@ -352,13 +314,13 @@ h3 {
 
 .projects-section {
     padding: 60px 0;
-    background: #f4f4f4;
+    background: #ffffff;
 }
 
 .project {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: #f4f4f4;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -374,12 +336,12 @@ h3 {
 .project-icon {
     font-size: 40px;
     margin-right: 20px;
-    color: #007bff;
+    color: #0fb64f;
 }
 
 .contact-section {
     padding: 60px 0;
-    background: #fff;
+    background: #f7fafc;
 }
 
 .contact-section .container {
@@ -408,14 +370,14 @@ input[type="submit"] {
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #339249;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #2dda44;
 }
 
 @media (max-width: 768px) {
@@ -453,5 +415,91 @@ input[type="submit"]:hover {
 
     .contact-section {
         padding: 20px;
+    }
+}
+
+/* Added Styles for Profile Image */
+.box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #f3f4f6;
+    /* Light grey background */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    inset: -10px 110px;
+    background: linear-gradient(315deg, #08e638, #184d2e);
+    /* Gradient */
+    transition: 0.5s;
+    animation: animate 6s linear infinite;
+}
+
+.box:hover::before {
+    inset: -20px 0px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    background: #f3f4f6;
+    /* Light grey background */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.box:hover .content img {
+    opacity: 2;
+}
+
+.content {
+    position: absolute;
+    inset: 9px;
+    border: 4px solid black;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Add this to increase the gap between image and about content */
+.about .box {
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .about .box {
+        margin-right: 2rem;
+        margin-bottom: 0;
     }
 }
