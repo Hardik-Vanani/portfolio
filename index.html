@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js"></script>
     </head>
     <body>
         <header class="header">
@@ -137,7 +139,7 @@
                 <div class="heading">
                     <h1 class="skill-heading">Contact Me</h1>
                 </div>
-                <form action="#">
+                <form id="contact-form" action="https://formspree.io/f/xpwawqep" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required />
                     </div>
@@ -147,10 +149,53 @@
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     </div>
-                    <input type="submit" value="Submit" class="btn btn-primary" />
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                    </div>
                 </form>
             </div>
         </section>
+
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                var formData = new FormData(this);
+                fetch("https://formspree.io/f/xpwawqep", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json",
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.ok) {
+                            // alert("Form submitted successfully");
+                            document.getElementById("contact-form").reset();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        alert("An error occurred. Please try again.");
+                    });
+            });
+
+            document.getElementById("contact-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Message sent successfully",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+                // Clear form fields after successful submission
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("message").value = "";
+            });
+        </script>
+
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const toggleButton = document.querySelector(".toggle-btn");
