@@ -357,6 +357,11 @@ h3 {
     width: 150px;
     height: auto;
     border-radius: 5px;
+box-shadow:10px 10px 20px rgb(9, 21, 126);
+}
+
+.company-pic{
+    box-shadow: #08e638;
 }
 
 .projects-section {
